@@ -1,0 +1,20 @@
+.imageContainer {
+  width: 60px;
+  min-width: 60px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: var(--color-background-blue-tint);
+  border-radius: var(--main-border-radius);
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}

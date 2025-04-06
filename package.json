@@ -10,21 +10,34 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@telegram-apps/sdk": "^3.6.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "@tanstack/react-query": "^5.64.2",
+    "@telegram-apps/sdk": "^3.7.1",
+    "clsx": "^2.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "@eslint/js": "^8.57.1",
+    "@types/node": "^22.13.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-legacy": "^5.4.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@yandex/ymaps3-types": "^1.0.15731128",
+    "esbuild": "~0.20.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.4.3",
+    "path": "^0.12.7",
+    "prettier": "3.4.2",
+    "terser": "^5.4.0",
+    "typescript": "^5.2.2",
+    "typescript-eslint": "^7.2.0",
+    "vite": "^5.0.8"
   }
 }

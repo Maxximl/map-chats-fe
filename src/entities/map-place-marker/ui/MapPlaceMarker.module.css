@@ -1,0 +1,51 @@
+.container {
+  padding: 4px;
+  background-color: var(--main-white-color);
+  border: 1px solid var(--main-border-color);
+  cursor: pointer;
+  border-radius: var(--main-border-radius);
+}
+
+.container.selected {
+  background-color: var(--color-background-accent);
+}
+
+.container::after {
+  content: ' ';
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-top: -2px;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--main-white-color) transparent transparent transparent;
+}
+
+.container.selected::after {
+  border-color: var(--color-background-accent) transparent transparent transparent;
+}
+
+.content {
+  display: flex;
+  gap: 8px;
+}
+
+.imageContainer {
+  width: 56px;
+}
+
+.title {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.caption {
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
