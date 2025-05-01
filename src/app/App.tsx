@@ -1,5 +1,6 @@
 import './App.css'
 import { MainMap } from '@widgets/main-map'
+import '@telegram-apps/telegram-ui/dist/styles.css'
 
 const App = () => {
   return (
