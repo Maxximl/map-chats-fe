@@ -14,11 +14,6 @@ const initializeTelegramSDK = async () => {
     if (miniApp.ready.isAvailable()) {
       await miniApp.ready()
       console.log('Mini App готово')
-      // @ts-expect-error
-      const initData = new URLSearchParams(window.Telegram.WebApp.initData)
-      const userId = initData.get('user') || initData.get('id') // Зависит от структуры initData
-
-      console.log('User ID:', userId)
     }
   } catch (error) {
     console.error('Ошибка инициализации:', error)

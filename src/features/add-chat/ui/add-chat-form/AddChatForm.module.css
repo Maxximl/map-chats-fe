@@ -1,0 +1,22 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+
+.wrapper {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.coordinatesContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formField {
+  padding-bottom: 8px;
+}

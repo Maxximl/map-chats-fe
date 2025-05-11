@@ -6,4 +6,6 @@ export interface Chat {
   creatorId: string
   longitude: number
   latitude: number
+  inviteLink: string 
+  imageUrl:   string
 }

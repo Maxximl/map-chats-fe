@@ -10,6 +10,8 @@ export interface ApiChatResponse {
     longitude: number
     latitude: number
   }
+  inviteLink: string
+  imageUrl: string
 }
 
 export interface AddChatRequest {
@@ -17,6 +19,8 @@ export interface AddChatRequest {
   chatId: string
   title: string
   description: string
+  inviteLink: string
+  imageUrl: string
   longitude: number
   latitude: number
 }

@@ -10,5 +10,7 @@ export function transformChat(chatData: ApiChatResponse): Chat {
     creatorId: chatData.creatorId,
     longitude: chatData.location.longitude,
     latitude: chatData.location.latitude,
+    inviteLink: chatData.inviteLink,
+    imageUrl: chatData.imageUrl,
   }
 }

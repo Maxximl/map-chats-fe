@@ -1,9 +1,15 @@
 .container {
   border-radius: 50%;
   padding: 2px;
-  background-color: var(--main-white-color);
-  border: 1px solid var(--main-border-color);
+  background-color: white;
+  border: 1px solid blue;
   cursor: pointer;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container.selected {
@@ -19,7 +25,7 @@
   margin-left: -6px;
   border-width: 6px;
   border-style: solid;
-  border-color: var(--main-white-color) transparent transparent transparent;
+  border-color: rgb(74, 74, 193) transparent transparent transparent;
 }
 
 .container.selected::after {

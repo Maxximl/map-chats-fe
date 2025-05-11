@@ -1,0 +1,18 @@
+.mainMap {
+  width: 100%;
+}
+
+.mapPin {
+  width: 24px;
+  height: 24px;
+}
+
+.container {
+  position: relative;
+}
+
+.coordinatesContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
