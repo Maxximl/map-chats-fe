@@ -1,12 +1,20 @@
 import { useMapStore } from '@features/search-map/model/store'
 import { Button, Card, Link, Modal } from '@telegram-apps/telegram-ui'
 import { CardCell } from '@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardCell/CardCell'
-import { ModalHeader } from '@telegram-apps/telegram-ui/dist/components/Overlays/Modal/components/ModalHeader/ModalHeader'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './pick-chat-modal.module.css'
+import { DeleteChatConfirmModal } from '../delete-chat-conrim-modal/delete-chat-confirm-modal'
+import { useChats } from '@entities/chat/api/queries'
+import { useAccess } from '@features/feature-access/lib/use-access'
+import { CardChip } from '@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardChip/CardChip'
 
 export const ChatInfoModal: FC = () => {
+  const { refetch } = useChats()
+
   const { selectedChat, setSelectedChat } = useMapStore()
+  const [chatDeleteConfirmationOpened, setChatDeleteConfirmationOpened] = useState(false)
+
+  const canEdit = useAccess(selectedChat)
 
   const onOpenChange = (opened: boolean) => {
     if (!opened) {
@@ -17,17 +25,27 @@ export const ChatInfoModal: FC = () => {
   const handleCloseCard = () => {
     setSelectedChat(null)
   }
+  const handleDeleteChat = () => {
+    setChatDeleteConfirmationOpened(true)
+  }
+
+  const handleCloseChatDeleteConfirmation = (isOpened: boolean) => {
+    if (!isOpened) {
+      setChatDeleteConfirmationOpened(false)
+    }
+  }
+
+  const handleDeleteSuccess = () => {
+    refetch()
+    setChatDeleteConfirmationOpened(false)
+    setSelectedChat(null)
+  }
 
   return (
-    <Modal
-      open={Boolean(selectedChat)}
-      title="куку"
-      header={<ModalHeader>Only iOS header</ModalHeader>}
-      onOpenChange={onOpenChange}
-    >
+    <Modal open={Boolean(selectedChat)} title="куку" onOpenChange={onOpenChange}>
       <Card className={styles.cardContainer}>
         <>
-          {/* <CardChip readOnly>Популярный чат</CardChip> */}
+          <CardChip readOnly>Новый чат</CardChip>
           <img
             alt="Dog"
             src={selectedChat?.imageUrl}
@@ -50,10 +68,23 @@ export const ChatInfoModal: FC = () => {
             </Link>
           </CardCell>
         </>
-        <Button stretched onClick={handleCloseCard}>
-          Закрыть
-        </Button>
+        <div className={styles.buttons}>
+          <Button stretched onClick={handleCloseCard}>
+            Закрыть
+          </Button>
+          {canEdit && (
+            <Button className={styles.deleteButton} stretched onClick={handleDeleteChat}>
+              Удалить
+            </Button>
+          )}
+        </div>
       </Card>
+      <DeleteChatConfirmModal
+        isOpen={chatDeleteConfirmationOpened}
+        onOpenChange={handleCloseChatDeleteConfirmation}
+        chatId={selectedChat?.id || ''}
+        onDeleteSuccess={handleDeleteSuccess}
+      />
     </Modal>
   )
 }

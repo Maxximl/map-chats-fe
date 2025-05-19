@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 
-export const API_URL = 'http://localhost:3000'
+export const API_URL = 'https://83.217.221.163'
 
 class ApiInstance {
   private axios: AxiosInstance

@@ -1,10 +1,11 @@
-.cardContainer {
-  width: 100%;
-}
-
 .buttons {
   display: flex;
   gap: 8px;
+  padding: 0 8px;
+}
+
+.container {
+  margin-bottom: 16px;
 }
 
 .deleteButton {
